@@ -20,7 +20,7 @@ const HeaderSection = () => {
                             1000, 
                             'Diseñadora web',
                             1000,
-                            'Estudiante de ingenieria en IA',
+                            'Estudiante de Ing. en IA',
                             1000,
                             'Valen',
                             3000
