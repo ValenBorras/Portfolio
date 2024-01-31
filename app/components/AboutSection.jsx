@@ -9,10 +9,10 @@ const TAB_DATA =[
         id:"education",
         content:(
             <ul className='list-disc pl-2'>
-                <li>Universidad de Palermo, Ingenieria en Inteligencia Artificial</li>
-                <li>Digital House, Fullstack Web Development</li>
-                <li>Coder House, React</li>
-                <li>IMB Michelangelo, bachillerato con orientación en cs. sociales y humanidades</li>
+                <li>Universidad de Palermo, Ingenieria en Inteligencia Artificial - Marzo 2023, actualidad </li>
+                <li>Digital House, Fullstack Web Development - Abril 2022, Noviembre 2022</li>
+                <li>Coder House, React - Enero 2023, Marzo 2023</li>
+                <li>IMB Michelangelo, bachillerato con orientación en cs. sociales y humanidades - 2016, 2022</li>
             </ul>
         )
     },
@@ -32,12 +32,24 @@ const TAB_DATA =[
         title:"Experiencia",
         id:"experience",
         content:(
-            <ul className='list-disc pl-2'>
+            <ul className='list-disc pl-2 pb-6'>
                 <li>Grasse, Full stack web developer, Colombia - Enero 2022, Septiembre 2022</li>
-                <li>Tickerana, Ticket Broker, United States - Enero 2023, Actualidad</li>
+                <li>Tickerana, Ticket Broker, United States - Enero 2023, Noviembre 2023</li>
+                <li>Geekshive, Market Analist, United States - Diciembre 2023 - Actualidad </li>
             </ul>
         )
     },
+    {
+        title:"Idiomas",
+        id:"idioms",
+        content:(
+            <ul className='list-disc pl-2 pb-6'>
+                <li>Español - Nativo</li>
+                <li>Ingles - C1</li>
+                <li>Italiano - B1</li>
+            </ul>
+        )
+    }
 ]
 
 const AboutSection = () => {
@@ -50,15 +62,15 @@ const AboutSection = () => {
         });
     };
   return (
-    <section className='text-white'>
-        <div className='md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16'>
-            <Image src="/img/about-image.png" width={500} height={500}/>
-            <div className='mt-4 md:mt-0 text-left flex flex-col h-full'>
-                <h2 className='text-4xl font-bold text-white mb-4'>
+    <section className='text-white' id='sobreMi'>
+        <div className='md:grid md:grid-cols-3 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16'>
+            <Image src="/img/about-image.png" width={400} height={400}/>
+            <div className='col-span-2 mt-4 md:mt-0 text-left flex flex-col h-full'>
+                <h2 className='text-4xl font-bold text-white mb-4' >
                     Sobre mi
                 </h2>
                 <p className='text-base lg:text-lg'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum non commodi, illum et quae, at veniam repudiandae beatae quod alias, debitis ullam hic ipsam rem? Aliquam et nulla alias corporis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit suscipit modi repudiandae corrupti, maiores nulla iusto ab sapiente! Ipsa facilis rem, alias et quidem in aliquid tenetur expedita quae itaque?.
+                Me considero una persona proactiva, autodidacta y resolvente, con una firme capacidad para abordar desafíos y encontrar soluciones innovadoras. Tengo un enfoque orientado a resultados y una gran habilidad para aprender de manera independiente, estas caracteristicas me permiten adaptarme rápido a nuevas situaciones y ambientes. Estoy comprometida con la excelencia, la autocrítica y la mejora continua, aportando una mentalidad proactiva y un alto nivel de autonomía a cualquier equipo o proyecto en el que participe. 
                 </p>
                 <div className='flex flex-row  mt-8'>
                     <TabButton 
@@ -76,8 +88,13 @@ const AboutSection = () => {
                     active={tab === "certifications"}>
                         Certificados
                     </TabButton>
+                    <TabButton 
+                    selectTab={()=> handleTabChange("idioms")} 
+                    active={tab === "idioms"}>
+                        Idiomas
+                    </TabButton>
                 </div>
-                <div className='mt-8'>
+                <div className='mt-8 mb-5 h-20 '>
 
                     {TAB_DATA.find((t)=>t.id === tab).content}
 

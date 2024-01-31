@@ -9,7 +9,7 @@ const projectsData= [
         title:"Proyecto 1",
         description:"Descripcion del proyecto 1",
         image:"/img/enProgreso.png",
-        tag: ["All", "Web"],
+        tag: ["All", "C"],
         gitUrl:"/",
         previewUrl:"/",
     },
@@ -18,7 +18,7 @@ const projectsData= [
         title:"Proyecto 2",
         description:"Descripcion del proyecto 2",
         image:"/img/enProgreso.png",
-        tag: ["All", "Web"],
+        tag: ["All", "React"],
         gitUrl:"/",
         previewUrl:"/",
     },
@@ -27,7 +27,7 @@ const projectsData= [
         title:"Proyecto 3",
         description:"Descripcion del proyecto 3",
         image:"/img/enProgreso.png",
-        tag: ["All", "Mobile"],
+        tag: ["All", "Python"],
         gitUrl:"/",
         previewUrl:"/",
     },
@@ -36,7 +36,7 @@ const projectsData= [
         title:"Proyecto 4",
         description:"Descripcion del proyecto 4",
         image:"/img/enProgreso.png",
-        tag: ["All", "Web"],
+        tag: ["All", "React"],
         gitUrl:"/",
         previewUrl:"/",
     },
@@ -45,7 +45,7 @@ const projectsData= [
         title:"Proyecto 5",
         description:"Descripcion del proyecto 5",
         image:"/img/enProgreso.png",
-        tag: ["All", "Mobile"],
+        tag: ["All", "React"],
         gitUrl:"/",
         previewUrl:"/",
     },
@@ -54,7 +54,7 @@ const projectsData= [
         title:"Proyecto 6",
         description:"Descripcion del proyecto 6",
         image:"/img/enProgreso.png",
-        tag: ["All", "Web"],
+        tag: ["All", "C"],
         gitUrl:"/",
         previewUrl:"/",
     }
@@ -72,16 +72,19 @@ const ProjectSection = () => {
     )
   return (
     <>
-    <h2 className='text-4xl font-bold text-white mb-8 mt-4 text-center'>
-        Mis Proyectos
-    </h2>
-    <div className='text-white flex flex-row justify-center items-center gap-2 py-6'>
-        <ProjectTag onClick={handleTagChange} name='All' isSelected={tag === 'All'}/>
-        <ProjectTag onClick={handleTagChange} name='Web' isSelected={tag === 'Web'}/>
-        <ProjectTag onClick={handleTagChange} name='Mobile' isSelected={tag === 'Mobile'}/>
-    </div>
-    <div className='grid md:grid-cols-3 gap-8 md:gap-12'>
-        {filteredProjects.map((project)=> <ProjectCard key={project.id} title={project.title} description={project.description} imgUrl={project.image} gitUrl={project.gitUrl} previewUrl={project.previewUrl}/>)}
+    <div >
+        <h2 className='text-4xl font-bold text-white mb-8 mt-4 text-center' id='proyectos'>
+            Mis Proyectos
+        </h2>
+        <div className='text-white flex flex-row justify-center items-center gap-2 py-6'>
+            <ProjectTag onClick={handleTagChange} name='All' isSelected={tag === 'All'}/>
+            <ProjectTag onClick={handleTagChange} name='React' isSelected={tag === 'React'}/>
+            <ProjectTag onClick={handleTagChange} name='C' isSelected={tag === 'C'}/>
+            <ProjectTag onClick={handleTagChange} name='Python' isSelected={tag === 'Python'}/>
+        </div>
+        <div className='grid md:grid-cols-3 gap-8 md:gap-12'>
+            {filteredProjects.map((project)=> <ProjectCard key={project.id} title={project.title} description={project.description} imgUrl={project.image} gitUrl={project.gitUrl} previewUrl={project.previewUrl}/>)}
+        </div>
     </div>
     </>
   )
